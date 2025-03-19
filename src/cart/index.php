@@ -48,7 +48,7 @@ foreach ($cart_items as $item) {
                 <?php endforeach; ?>
             </div>
             <div class="cart-total">
-                <h3>Всего: <?php echo number_format($total, 2); ?>р</h3>
+                <h3>Всего: <?php echo number_format($total, 0, '.', ' '); ?>р</h3>
                 <form action="/cart/checkout.php" method="POST">
                     <button type="submit">Заказать</button>
                 </form>

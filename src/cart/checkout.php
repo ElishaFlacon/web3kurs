@@ -65,7 +65,7 @@ try {
 
     $db->commit();
 
-    $_SESSION['success_message'] = "Order placed successfully!";
+    $_SESSION['success_message'] = "Заказ успешно создан!";
 ?>
     <script>
         window.location.href = '/orders';

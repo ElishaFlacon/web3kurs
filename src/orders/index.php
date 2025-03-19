@@ -49,7 +49,7 @@ $orders = $stmt->fetchAll();
                 <?php if ($current_order_id !== $item['id']): ?>
                     <?php if ($current_order_id !== null): ?>
                         <div class="order-total">
-                            Всего: $<?php echo number_format($order_total, 0, '.', ' '); ?>
+                            Всего: <?php echo number_format($order_total, 0, '.', ' '); ?>
                         </div>
     </div>
 <?php endif; ?>
