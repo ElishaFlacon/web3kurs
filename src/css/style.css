@@ -163,6 +163,12 @@ button:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
+.price {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
 .order-item {
     display: flex;
     justify-content: space-between;

@@ -20,6 +20,7 @@ $books = $stmt->fetchAll();
                         <div>
                             <h3><?php echo $book['title']; ?></h3>
                             <p>Автор <?php echo $book['author']; ?></p>
+                            <p style="margin-top: 1rem;"><?php echo $book['description']; ?></p>
                             <p class="price"><?php echo number_format($book['price'], 0, '.', ' '); ?>р</p>
                         </div>
                         <?php if (isset($_SESSION['user_id'])): ?>
