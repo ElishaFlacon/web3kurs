@@ -45,8 +45,12 @@ CREATE TABLE order_items (
     FOREIGN KEY (book_id) REFERENCES books(id)
 );
 
--- Добавим тестовые данные
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 INSERT INTO books (title, author, description, price, image_url, stock) VALUES
-('1984', 'George Orwell', 'A dystopian novel', 19.99, 'https://example.com/1984.jpg', 10),
-('The Hobbit', 'J.R.R. Tolkien', 'A fantasy novel', 24.99, 'https://example.com/hobbit.jpg', 15),
-('Pride and Prejudice', 'Jane Austen', 'A romantic novel', 14.99, 'https://example.com/pride.jpg', 20);
+('Мастер и Маргарита', 'Михаил Булгаков', 'Великий мистический роман о визите Воланда в Москву, любви и вечной борьбе добра со злом', 2499, 'https://cdn.culture.ru/images/a0e70f0b-2ace-5f45-9fd7-b038ea2d3a56', 15),
+('Метро 2033', 'Дмитрий Глуховский', 'Постапокалиптический роман о выживших в московском метро после ядерной войны', 1749, 'https://avatars.mds.yandex.net/i?id=5df81b33f7d0f9c0d674fd8f19927533_l-8497314-images-thumbs&n=13', 20),
+('Тень ветра', 'Карлос Руис Сафон', 'Мистический детектив о книжном лабиринте и загадочном авторе в послевоенной Барселоне', 1899, 'https://i.pinimg.com/originals/5d/63/21/5d632160074b718629cb6e34208d9f83.png', 12),
+('Цветы для Элджернона', 'Дэниел Киз', 'Трогательная история об умственно отсталом уборщике, ставшем гением благодаря научному эксперименту', 1599, 'https://ussrwine.site/uploads/cache/img_A_110534_6988df90cb4d581fcf23e258d83a5d3c-800x800.jpg', 18),
+('Дюна', 'Фрэнк Герберт', 'Эпическая сага о пустынной планете Арракис, специях и борьбе за власть в галактической империи', 2199, 'https://cdn.culture.ru/images/a0e70f0b-2ace-5f45-9fd7-b038ea2d3a56', 25);

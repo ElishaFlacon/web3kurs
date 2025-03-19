@@ -31,8 +31,10 @@ $orders = $stmt->fetchAll();
         <h2>Заказы</h2>
 
         <?php if (isset($_SESSION['success_message'])): ?>
-            <div class="success"><?php echo $_SESSION['success_message'];
-                                    unset($_SESSION['success_message']); ?></div>
+            <div class="success">
+                <?php echo $_SESSION['success_message'];
+                unset($_SESSION['success_message']); ?>
+            </div>
         <?php endif; ?>
 
         <?php if (empty($orders)): ?>
@@ -47,11 +49,10 @@ $orders = $stmt->fetchAll();
                 <?php if ($current_order_id !== $item['id']): ?>
                     <?php if ($current_order_id !== null): ?>
                         <div class="order-total">
-                            Всего: $<?php echo number_format($order_total, 2); ?>
+                            Всего: $<?php echo number_format($order_total, 0, '.', ' '); ?>
                         </div>
     </div>
 <?php endif; ?>
-</div>
 
 <div class="order">
     <h3>Заказ #<?php echo $item['id']; ?></h3>
@@ -65,14 +66,16 @@ $orders = $stmt->fetchAll();
 <div class="order-item">
     <span><?php echo $item['title']; ?></span>
     <span>Количество: <?php echo $item['quantity']; ?></span>
-    <span>Цена: <?php echo number_format($item['price'], 2); ?>р</span>
+    <span>Цена: <?php echo number_format($item['price'], 0, '.', ' '); ?>р</span>
 </div>
 
 <?php $order_total += $item['price'] * $item['quantity']; ?>
 <?php endforeach; ?>
 
+<!-- Закрываем последний заказ -->
 <div class="order-total">
-    Всего: <?php echo number_format($order_total, 2); ?>р
+    Всего: <?php echo number_format($order_total, 0, '.', ' '); ?>р
+</div>
 </div>
 <?php endif; ?>
 </div>

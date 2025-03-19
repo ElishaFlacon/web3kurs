@@ -16,15 +16,19 @@ $books = $stmt->fetchAll();
             <?php foreach ($books as $book): ?>
                 <div class="book-card">
                     <img class="book-img" src="<?php echo $book['image_url']; ?>" alt="">
-                    <h3><?php echo $book['title']; ?></h3>
-                    <p>Автор <?php echo $book['author']; ?></p>
-                    <p class="price"><?php echo number_format($book['price'], 2); ?>р</p>
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <form action="/cart/add.php" method="POST">
-                            <input type="hidden" name="book_id" value="<?php echo $book['id']; ?>">
-                            <button type="submit">Добавить в корзину</button>
-                        </form>
-                    <?php endif; ?>
+                    <div class="book-content">
+                        <div>
+                            <h3><?php echo $book['title']; ?></h3>
+                            <p>Автор <?php echo $book['author']; ?></p>
+                            <p class="price"><?php echo number_format($book['price'], 0, '.', ' '); ?>р</p>
+                        </div>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <form action="/cart/add.php" method="POST">
+                                <input type="hidden" name="book_id" value="<?php echo $book['id']; ?>">
+                                <button type="submit">Добавить в корзину</button>
+                            </form>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -7,14 +7,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Киниги тут</title>
+    <title>Книги</title>
     <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="brand">Книги тут</a>
+            <a href="/" class="brand">Книги</a>
             <div class="nav-links">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="/cart">Корзина</a>

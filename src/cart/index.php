@@ -42,7 +42,7 @@ foreach ($cart_items as $item) {
                         <div class="item-details">
                             <h3><?php echo $item['title']; ?></h3>
                             <p>Количество: <?php echo $item['quantity']; ?></p>
-                            <p>Цена: <?php echo number_format($item['price'], 2); ?>р</p>
+                            <p>Цена: <?php echo number_format($item['price'], 0, '.', ' '); ?>р</p>
                         </div>
                     </div>
                 <?php endforeach; ?>
